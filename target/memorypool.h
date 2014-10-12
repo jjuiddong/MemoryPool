@@ -67,5 +67,4 @@ namespace common
 
 	template<class T>
 	boost::pool<> cMemoryPool<T>::m_pool(sizeof(T));
-
 }

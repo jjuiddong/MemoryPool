@@ -18,6 +18,19 @@ public:
 	int m_a;
 };
 
+// bug occure
+class cB : public cA
+{
+public:
+	cB() {m_b = 0;}
+	cB(int b) : m_b(b) {}
+	void print() { 
+		cout << "print" << m_b << endl;
+	}
+
+	int m_b;
+};
+
 
 void main()
 {
@@ -32,4 +45,10 @@ void main()
 	cA *pa = new cA[ 10];
 	pa[ 0].print();
 	delete[] pa;
+
+	// bug occure
+	cA *pp5 = new cB(1000);
+	pp5->print();
+	delete pp5;
+
 }
